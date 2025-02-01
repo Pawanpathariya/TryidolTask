@@ -1,3 +1,4 @@
+import { message } from "antd";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -11,6 +12,7 @@ const InvoiceList = () => {
   }, []);
 
   const loadInvoice = (invoice) => {
+    message.success("Invoice loaded successfully!");
     localStorage.setItem("currentInvoice", JSON.stringify(invoice));
     navigate("/invoice");
   };
@@ -18,6 +20,7 @@ const InvoiceList = () => {
   const deleteInvoice = (id) => {
     const updatedInvoices = invoices.filter((invoice) => invoice.id !== id);
     setInvoices(updatedInvoices);
+    message.success("Invoice deleted successfully!");
     localStorage.setItem("invoices", JSON.stringify(updatedInvoices));
   };
 

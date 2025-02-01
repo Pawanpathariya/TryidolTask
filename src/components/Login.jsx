@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import message from 'antd/lib/message';
 const Login = ({ setIsAuthenticated }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -10,9 +10,10 @@ const Login = ({ setIsAuthenticated }) => {
     e.preventDefault();
     if (username == "admin" && password == "admin@123") {
       setIsAuthenticated(true);
+      message.success("Login successful");
       navigate("/invoice");
     } else {
-      alert("Invalid Credentials");
+      message.error("Invalid Credentials");
     }
   };
 
