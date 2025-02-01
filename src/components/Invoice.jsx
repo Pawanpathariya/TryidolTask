@@ -80,7 +80,7 @@ const Invoice = () => {
           <li key={item.id} style={{ display: 'flex', alignItems: 'center', marginBottom: '10px', justifyContent: 'center' }}>
             <input type="text" placeholder="Item Name"  onChange={(e) => handleInputChange(e, index, "name")}  style={{ width: '200px', marginRight: '10px', backgroundColor: '#f8f9fa', borderRadius: '5px',height: '30px' }} />
             <input type="number" placeholder="Quantity"  onChange={(e) => handleInputChange(e, index, "quantity")} min="1"  style={{ width: '80px', marginRight: '10px', backgroundColor: '#f8f9fa', borderRadius: '5px',height: '30px'}} />
-            <input type="number" placeholder="Price" value={item.price} onChange={(e) => handleInputChange(e, index, "price")} min="0"  style={{ width: '80px', marginRight: '10px', backgroundColor: '#f8f9fa', borderRadius: '5px',height: '30px' }} />
+            <input type="number" placeholder="Price"  onChange={(e) => handleInputChange(e, index, "price")} min="0"  style={{ width: '80px', marginRight: '10px', backgroundColor: '#f8f9fa', borderRadius: '5px',height: '30px' }} />
             <button onClick={() => removeItem(item.id)} style={{ backgroundColor: '#dc3545', color: 'white', border: 'none', padding: '5px 10px', borderRadius: '5px', cursor: 'pointer',height: '30px',marginRight: '10px' }}>Remove</button>
           </li>
 
